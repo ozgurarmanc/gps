@@ -1,0 +1,33 @@
+[package]
+name = "linda-backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Web server
+tokio = { version = "1", features = ["full"] }
+axum = "0.7"
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Crypto & Ethereum (optional for now)
+# ethers = { version = "2.0", features = ["abigen"] }
+hex = "0.4"
+sha3 = "0.10"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1

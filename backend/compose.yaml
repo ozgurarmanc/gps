@@ -1,0 +1,12 @@
+services:
+  rofl:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - RUST_LOG=info
+      - SAPPHIRE_RPC_URL=${SAPPHIRE_RPC_URL:-https://testnet.sapphire.oasis.dev}
+      - CELO_RPC_URL=${CELO_RPC_URL:-https://alfajores-forno.celo-testnet.org}
+      - FRIEND_MANAGER_CONTRACT=${FRIEND_MANAGER_CONTRACT}
+    restart: unless-stopped

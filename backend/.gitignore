@@ -1,0 +1,17 @@
+# Rust
+target/
+Cargo.lock
+*.orc
+
+# Environment
+.env
+.env.local
+
+# Docker
+.dockerignore
+
+# Logs
+*.log
+
+# OS
+.DS_Store
